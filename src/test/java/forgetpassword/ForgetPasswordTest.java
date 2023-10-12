@@ -13,7 +13,7 @@ public class ForgetPasswordTest extends BaseTest {
         String expectedResult="Internal Server Error";
         String actualResult=driver.findElement(By.xpath("/html/body/h1")).getText();
         assertTrue(actualResult.contains(expectedResult));
-        
+
         
 
 
