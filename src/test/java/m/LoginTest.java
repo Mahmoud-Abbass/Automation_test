@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import pages.LoginPage;
+import pages.SecureAreaPage;
 
 import static org.testng.Assert.assertTrue;
 public class LoginTest extends BaseTest {
@@ -16,14 +18,14 @@ public class LoginTest extends BaseTest {
     //valid login
     public void testSuccessfullyLogin(){
 
-
-       driver.findElement(By.xpath("//*[contains(text(),'Form')]")).click();
-       driver.findElement(By.cssSelector("#username")).sendKeys("tomsmith");
-       driver.findElement(By.cssSelector("input[name=password]")) .sendKeys("SuperSecretPassword!");
-       driver.findElement(By.cssSelector(".fa.fa-2x.fa-sign-in")).click();
-       String expectedResult = "You logged into a secure area!";
-       String actualResult = driver.findElement(By.xpath("//div[@id='flash']")).getText();
-       assertTrue(actualResult.contains(expectedResult));
+        LoginPage loginPage = homePage.clickonFormAuthenticationLink();
+        loginPage.insertUsername("tomsmith");
+        loginPage .insertPassword("SuperSecretPassword!");
+        SecureAreaPage secureAreaPage = loginPage.ClickOnLoginButton();
+        secureAreaPage.getValidationMessage();
+        String actualResult = secureAreaPage . getValidationMessage();
+        String expectedResult = "You logged into a secure area!";
+        assertTrue(actualResult.contains(expectedResult));
 
     }
 
