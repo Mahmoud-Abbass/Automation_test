@@ -47,6 +47,16 @@ public class HomePage {
          driver.findElement(DynamicLink).click();
          return new DropDownPage(driver);
      }
+     private By JavaScriptAlertsLink = By.linkText("JavaScript Alerts");
+     public JavaScriptPage clickOnJavaScriptAlertsLink(){
+         driver.findElement(JavaScriptAlertsLink).click();
+         return new JavaScriptPage(driver);
+     }
+   private By WYSIWYGEditorLink = By.linkText("WYSIWYG Editor");
+     public  WYSIWYGEditorPage clickOnWYSIWYGEditorLink (){
+         driver.findElement(WYSIWYGEditorLink).click();
+         return new WYSIWYGEditorPage(driver);
+     }
 }
 
 
