@@ -57,6 +57,12 @@ public class HomePage {
          driver.findElement(WYSIWYGEditorLink).click();
          return new WYSIWYGEditorPage(driver);
      }
+     private By EntryAdLink = By.linkText("Entry Ad");
+     public EnteryAdLinkPage clickOnEntryAdLink(){
+         driver.findElement(EntryAdLink).click();
+         return new EnteryAdLinkPage(driver);
+     }
+
 }
 
 

@@ -20,10 +20,16 @@ public class JavaScriptPage{
         public void acceptAlert(){
         driver.switchTo().alert().accept();
         }
-        public void ClickOnJsConfirmButton (){
+        public void sendALertValue(String text){driver.switchTo().alert().sendKeys(text);
+    }
+    public void clickOkAfterSendKey(){
+        driver.switchTo().alert().accept();
+    }
+
+        public void clickOnJsConfirmButton (){
         driver.findElement(jSConfirmButton).click();
         }
-        public void ClickOnJsPromotButton(){
+        public void clickOnJsPromotButton(){
         driver.findElement(jsPromotButton).click();
         }
 
